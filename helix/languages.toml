@@ -1,0 +1,100 @@
+# bash
+[[language]]
+name = "bash"
+language-servers = ["bash-language-server"]
+auto-format = true
+shebangs = ["sh", "bash"]
+indent = { tab-width = 2, unit = "  " }
+[language-server.bash-language-server]
+command = "bash-language-server"
+args = ["start"]
+config = { providFormatter = true }
+
+# rust
+[[language]]
+name = "rust"
+auto-format = true
+indent = { tab-width = 2, unit = "  " }
+language-servers = ["rust-analyzer", "tailwindcss-ls"]
+[language-server.rust-analyzer.config.check]
+command = "clippy"
+[language-server.rust-analyzer.config.cargo]
+features = "all"
+
+# nix
+[[language]]
+name = "nix"
+auto-format = true
+indent = { tab-width = 2, unit = "  " }
+formatter = { command = "nixpkgs-fmt" }
+
+# python
+[[language]]
+name = "python"
+auto-format = true
+indent = { tab-width = 2, unit = "  " }
+language-servers = ["pyright"]
+
+# web
+[language-server.tailwindcss-ls]
+command = "tailwindcss-language-server"
+args = ["--stdio"]
+config = { userLanguages = { rust = "html", "*.rs" = "html" } }
+[[language]]
+name = "html"
+auto-format = true
+indent = { tab-width = 2, unit = "  " }
+formatter = { command = "prettier", args = ["--parser", "html"] }
+language-servers = ["vscode-html-language-server", "tailwindcss-ls"]
+[[language]]
+name = "css"
+auto-format = true
+indent = { tab-width = 2, unit = "  " }
+formatter = { command = "prettier", args = ["--parser", "css"] }
+language-servers = ["vscode-css-language-server", "tailwindcss-ls"]
+[[language]]
+name = "jsx"
+auto-format = true
+indent = { tab-width = 2, unit = "  " }
+formatter = { command = "prettier", args = ["--parser", "typescript"] }
+language-servers = ["typescript-language-server", "tailwindcss-ls"]
+[[language]]
+name = "tsx"
+auto-format = true
+indent = { tab-width = 2, unit = "  " }
+formatter = { command = "prettier", args = ["--parser", "typescript"] }
+language-servers = ["typescript-language-server", "tailwindcss-ls"]
+[[language]]
+name = "javascript"
+auto-format = true
+indent = { tab-width = 2, unit = "  " }
+formatter = { command = "prettier", args = ["--parser", "typescript"] }
+language-servers = ["vscode-eslint-language-server"]
+[[language]]
+name = "typescript"
+auto-format = true
+indent = { tab-width = 2, unit = "  " }
+formatter = { command = "prettier", args = ["--parser", "typescript"] }
+language-servers = ["vscode-eslint-language-server"]
+[[language]]
+name = "json"
+auto-format = true
+indent = { tab-width = 2, unit = "  " }
+formatter = { command = "prettier", args = ["--parser", "json"] }
+language-servers = ["vscode-json-language-server"]
+
+
+# toml
+[[language]]
+name = "toml"
+auto-format = true
+indent = { tab-width = 2, unit = "  " }
+formatter = { command = "taplo", args = ["fmt", "-"] }
+
+# md
+[[language]]
+name = "markdown"
+auto-format = true
+indent = { tab-width = 2, unit = "  " }
+formatter = { command = "dprint", args = ["fmt", "--stdin", "md"]}
+language-servers = ["vscode-markdown-language-server"]

@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+#=========================================================================#
+# title       : compile rust project                                      #
+# author      : sunless47                                                 #
+# description : runs the long commands required to compile a rust program #
+#=========================================================================#
+
+# error handling (set -euo pipefail)
+set -o errexit
+set -o nounset
+set -o pipefail
+
+# rust project
+PROJECT=structs_methods
+
+# opening with helix
+cargo run --package $PROJECT

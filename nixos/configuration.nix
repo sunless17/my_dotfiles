@@ -29,6 +29,8 @@
     stow
     discord-canary
     anki
+    blender
+    pandoc
     # cli utils
     htop
     tree

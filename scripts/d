@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+#============================================#
+# title       : offline documentation        #
+# date        : 2024-09-16                   #
+# author      : sunless47                    #
+# description : offline documentation viewer #
+#============================================#
+
+# error handling (set -euo pipefail)
+set -o errexit
+set -o nounset
+set -o pipefail
+
+# arch-docs (needs downloading)
+arch_wiki() {
+  # initialize docs directory variable
+  ARCH_DOCS=/usr/share/doc/arch-wiki/html/en/*.html
+
+  # selecting with fzf and filtering with awk
+  SPEC_DOC=$( \
+    find $ARCH_DOCS -type f | \
+    awk -F / '{print $8}' | \
+    fzf \
+  )
+
+  # stop if no input
+  if [[ -z $SPEC_DOC ]]; then
+    exit
+  else
+    # update variable
+    SPEC_DOC=/usr/share/doc/arch-wiki/html/en/$SPEC_DOC
+  fi
+
+  # opening with qutebrowser
+  qutebrowser ${SPEC_DOC} 2> /dev/null & 
+}
+
+arch_wiki

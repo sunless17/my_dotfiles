@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#===================================================#
+# title       : configs editor                      #
+# author      : sunless47                           #
+# description : all user configs located in .config #
+#===================================================#
+
+# wifi
+sudo wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant/sunless.conf

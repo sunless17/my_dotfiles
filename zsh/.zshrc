@@ -12,7 +12,9 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-alias ls="ls --almost-all --color=always"
+alias ls="eza --almost-all"
+alias hx="helix"
+alias r="rmm"
 
 #Default prompt
 # PROMPT='%F{blue}%~%f '

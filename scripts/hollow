@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+#==================================================#
+# title       : music downloader                   #
+# author      : sunless47                          #
+# description : download best quality from youtube #
+#==================================================#
+
+# error handling (set -euo pipefail)
+set -o errexit
+set -o nounset
+set -o pipefail
+
+# download with play music
+mpv \
+		--shuffle \
+		--no-terminal \
+		--loop-playlist \
+		--playlist=/home/sunless/silence/doki &
+		# --playlist=/home/sunless/silence/yoga-lofi &
