@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+#==============================================================#
+# title       : long list view                                 #
+# author      : sunless47                                      #
+# description : view directory contents in long-listing format #
+# #============================================================#
+
+# error handling (set -euo pipefail)
+set -o errexit
+set -o nounset
+set -o pipefail
+
+# long listing options
+long-list(){
+		ls \
+				--almost-all \
+				--format=verbose \
+				--reverse \
+				--color=always \
+				--sort=size \
+				--human-readable 
+}
+
+# calling function
+long-list

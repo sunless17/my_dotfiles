@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+#============================================================#
+# title       : local ai                                     #
+# author      : sunless47                                    #
+# description : run tiny dolphin llm from a docker container #
+#============================================================#
+
+# error handling (set -euo pipefail)
+set -o errexit
+set -o nounset
+set -o pipefail
+
+# start local ai from the ollama container
+llm() {
+		# create docker container
+		# docker run \
+		# 				--volume=/home/sunless/stash/ollama:/root/.ollama \
+		# 				--detach=true \
+		# 				--name=ai \
+		# 				ollama/ollama
+
+		# start the created container
+		docker start ai
+
+		# execute tiny dolphin
+		docker exec \
+					 --interactive=true \
+					 --tty=true \
+					 ai \
+					 ollama run tinydolphin
+					 # ollama run deepseek-r1:1.5b
+}
+
+# execute function
+llm

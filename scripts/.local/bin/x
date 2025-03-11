@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+#===========================================#
+# title       : start cooking               #
+# author      : sunless47                   #
+# description : open ide in projects folder #
+#===========================================#
+
+# error handling (set -euo pipefail)
+set -o errexit
+set -o nounset
+set -o pipefail
+
+# runs helix in the projects directory
+cook() {
+  hx ~/alchemy/darkness/
+}
+
+# execute function
+cook

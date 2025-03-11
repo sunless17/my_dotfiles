@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+#===============================================#
+# title       : editing scripts                 #
+# author      : sunless17                       #
+# description : tinker with my personal scripts #
+#===============================================#
+
+# error handling (set -euo pipefail)
+set -o errexit
+set -o nounset
+set -o pipefail
+
+# tinker with personal scripts
+personal_scripts(){
+  # target directory
+  # DIRE="$HOME/my_dotfiles/scripts/.local/bin/"
+  DIRE="$HOME/.local/bin/"
+
+  # list everything, print specific column, preview with bat
+  SCRIPTS=$(
+    find "${DIRE}" -type f |
+      awk -F / '{print $6}' |
+      fzf \
+        --multi \
+        --keep-right 
+  )
+
+  # stop if no input
+  if [[ -n $SCRIPTS ]]; then
+			# open with helix
+			hx "${DIRE}"/"${SCRIPTS}"
+  fi
+}
+
+# calling function
+personal_scripts

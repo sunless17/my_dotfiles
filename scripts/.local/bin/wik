@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+#==============================================================#
+# title       : local wiki                                     #
+# author      : sunless47                                      #
+# description : run kiwix and the zim files in the wiki folder #
+#==============================================================#
+
+# error handling (set -euo pipefail)
+set -o errexit
+set -o nounset
+set -o pipefail
+
+# start local ai from the ollama container
+offline_wiki() {
+		# create docker container
+		# docker run \
+		# 				--name=wiki \
+		# 				--detach=true \
+		# 			  -v /home/sunless/wiki:/data \
+		# 			  -p 8080:8080 \
+		# 			  ghcr.io/kiwix/kiwix-serve '*.zim'
+
+		# start kiwix container
+		docker start wiki
+
+		# browser
+		BROWSER=librewolf
+
+		# open browser
+		$BROWSER "http://172.17.0.2:8080" 2> /dev/null &
+}
+
+# calling function
+offline_wiki

@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+#===================================================#
+# title       : docker operating systems            #
+# author      : sunless47                           #
+# description : runs selected docker container      #
+#===================================================#
+
+# error handling (set -euo pipefail)
+set -o errexit
+set -o nounset
+set -o pipefail
+
+# start ollama container
+docker-os() {
+  # selecting os
+  SELECTED_OS=$( \
+    printf '%s\n' \
+    debian fedora ubuntu alpine | \
+    fzf \
+  )
+
+  # stop if no input
+  if [[ -z "$SELECTED_OS" ]]; then
+    exit
+  fi
+
+  # run image
+  docker run \
+				 --name sunless \
+				 --interactive=true \
+				 --tty=true \
+				 --rm true \
+				 "$SELECTED_OS" 
+}
+
+# calling function
+docker-os

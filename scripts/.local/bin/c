@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+#===================================================#
+# title       : configs editor                      #
+# author      : sunless47                           #
+# description : all user configs located in .config #
+#===================================================#
+
+# error handling (set -euo pipefail)
+set -o errexit
+set -o nounset
+set -o pipefail
+
+# list and select configs
+configs() {
+		# target directory
+		confs=( \
+				"$HOME/.config/hypr/" \
+				"$HOME/.config/emacs/configs/" \
+				"$HOME/.config/emacs/init.el" \
+				"$HOME/.config/fd/" \
+				"$HOME/.config/newsboat/" \
+				"$HOME/.config/rofi" \
+				"$HOME/.config/ghostty" \
+				"$HOME/.config/qutebrowser" \
+				"$HOME/.config/helix/config.toml" \
+				"$HOME/.config/helix/languages.toml" \
+		)
+
+		# list configs with fzf and open with emacs
+		find "${confs[@]}" -type f |
+				fzf --multi --keep-right --preview 'bat {1}' |
+				xargs --no-run-if-empty \
+				hx
+}
+
+# calling function
+configs

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#=====================================================#
+# title       : wallpaper                             #
+# author      : sunless47                             #
+# description : manual is better than automatic setup #
+#=====================================================#
+wbg $HOME/stash/pics/sunless.png &

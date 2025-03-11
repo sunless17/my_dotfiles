@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+#===========================================================================#
+# title       : one true editor                                             #
+# author      : sunless47                                                   #
+# description : emacsclient for opening files or just launching the program #
+#===========================================================================#
+
+# error handling (set -euo pipefail)
+set -o errexit
+set -o nounset
+set -o pipefail
+
+# list and select configs
+emacsclient \
+		--reuse-frame \
+		--tty \
+		$@
