@@ -1,0 +1,21 @@
+## right side
+currentTime() {
+    printf "%*s" $COLUMNS "$(date +%R\ %a\ %d\ %b)"
+}
+
+## final form
+PS1='\[$(
+    tput sc
+    currentTime
+    tput rc
+)\]\[$(tput setaf 4)\]\w \$\[$(tput sgr0)\] '
+
+# fzf
+export FZF_ALT_C_COMMAND="fd --type d --hidden --follow . "
+
+# noice
+shopt -s autocd
+shopt -s cdspell
+
+# go
+# export PATH="$HOME/.local/bin:$HOME/go/bin:$PATH"

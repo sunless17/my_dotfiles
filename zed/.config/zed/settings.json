@@ -1,0 +1,20 @@
+{
+  "ui_font_size": 12,
+  "buffer_font_size": 12,
+  "theme": "Tokyo Night",
+  "ui_font_family": "Hack Nerd Font Mono",
+  "vim_mode": true,
+  "cursor_shape": "underline",
+  "scrollbar": { "show": "never" },
+  "inlay_hints": { "enabled": true },
+  "collaboration_panel": { "button": false },
+  "chat_panel": { "button": "never" },
+  "notification_panel": { "button": false },
+  "tab_size": 2,
+  "auto_update": false,
+  "terminal": { "cursor_shape": "underline", "button": false },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  }
+}

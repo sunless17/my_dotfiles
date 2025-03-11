@@ -1,0 +1,38 @@
+theme = "onedarker"
+
+[editor]
+mouse = false
+auto-format = true
+continue-comments = false
+end-of-line-diagnostics = "hint"
+
+[editor.statusline]
+left = ["mode", "file-name", "spinner"]
+right = ["diagnostics", "position-percentage"]
+
+[editor.cursor-shape]
+insert = "underline"
+normal = "underline"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+parents = false
+
+[editor.soft-wrap]
+enable = true
+wrap-indicator = "" # set wrap-indicator to "" to hide it
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
+other-lines = "warning"
+
+[editor.lsp]
+display-progress-messages = true
+display-inlay-hints = true
+
+[keys.normal]
+C-o = ":open ~/.config/helix/config.toml" # Maps Ctrl-o to opening of the helix config file
+
+[keys.insert]
+"C-[" = "normal_mode"
