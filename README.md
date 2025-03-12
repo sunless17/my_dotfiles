@@ -1,8 +1,7 @@
 # my dotfiles
 "stows" my dotfiles
 ## requirements
-Git
-Stow
+Git and Stow
 ## installation
 ```
 $ git clone git@github.com/sunless17/my_dotfiles.git
