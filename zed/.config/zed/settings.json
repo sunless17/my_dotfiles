@@ -2,7 +2,7 @@
   "assistant": {
     "default_model": {
       "provider": "ollama",
-      "model": "deepseek-r1:1.5b"
+      "model": "dolphin-phi:latest"
     },
     "version": "2"
   },

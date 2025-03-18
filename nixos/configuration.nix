@@ -17,20 +17,18 @@
     librewolf
     qutebrowser
     newsboat
-    zed-editor
     aria2
     helix
     mpv
     zathura
     lazygit
-    emacs
-    ollama
     ghostty
     docker
     gimp
     yt-dlp
     stow
     discord-canary
+    anki
     # cli utils
     htop
     tree
@@ -52,36 +50,18 @@
     ncdu
     networkmanager
     zsh
-    docker
     hyprland
     mako
     # dev
     rustup
-    pkg-config
-    openssl
-    # openssl.dev
-    sqlite
     clang
     gnumake
-    nixpkgs-fmt
     nodejs
+    nixpkgs-fmt
+    marksman
+    dprint
+    python313Packages.grip
   ];
-
-  # environment.sessionVariables = rec {
-  # PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
-  # };
-
-  # # rust
-  # programs.nix-ld.enable = true;
-  # programs.nix-ld.libraries = with pkgs; [
-  #   cargo
-  # ];
-
-  # emacsclient
-  services.emacs = {
-    enable = true;
-    package = pkgs.emacs;
-  };
 
   # shell
   programs.zsh.enable = true;
@@ -93,12 +73,13 @@
 
   # docker
   virtualisation.docker.enable = true;
+  virtualisation.docker.rootless = {
+    enable = true;
+    setSocketVariable = true;
+  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  # run the nix search command
-  # nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # limit generations
   boot.loader.systemd-boot.configurationLimit = 3;
@@ -121,17 +102,11 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-  # # Configure keymap in X11
-  # services.xserver.xkb = {
-  #   layout = "us";
-  #   variant = "";
-  # };
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.sunless = {
     isNormalUser = true;
     description = "sunless";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
   };
 
   # Enable automatic login for the user.

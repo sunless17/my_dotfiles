@@ -12,22 +12,24 @@ set -o pipefail
 
 # start local ai from the ollama container
 llm() {
-		# create docker container
+		# # create docker container
 		# docker run \
 		# 				--volume=/home/sunless/stash/ollama:/root/.ollama \
 		# 				--detach=true \
 		# 				--name=ai \
 		# 				ollama/ollama
 
-		# start the created container
-		docker start ai
+		# # start the created container
+		# docker start ai
 
 		# execute tiny dolphin
 		docker exec \
 					 --interactive=true \
 					 --tty=true \
 					 ai \
-					 ollama run tinydolphin
+					 ollama run deepseek-coder
+					 # ollama run phi4-mini
+					 # ollama run tinydolphin
 					 # ollama run deepseek-r1:1.5b
 }
 
