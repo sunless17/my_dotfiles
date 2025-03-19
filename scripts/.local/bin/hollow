@@ -15,5 +15,5 @@ mpv \
 		--shuffle \
 		--no-terminal \
 		--loop-playlist \
-		--playlist=/home/sunless/silence/yoga-lofi &
-		# --playlist=/home/sunless/silence/doki &
+		# --playlist=/home/sunless/silence/yoga-lofi &
+		--playlist=/home/sunless/silence/doki &

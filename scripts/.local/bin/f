@@ -12,4 +12,4 @@ set -o pipefail
 
 # opening with helix
 # $HOME/.config/helix/ignore deals with files i don't want to open
-hx $HOME/.config/
+hx $HOME/alchemy/darkness/hello_rust/

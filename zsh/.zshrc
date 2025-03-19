@@ -13,8 +13,6 @@ compinit
 # End of lines added by compinstall
 
 alias ls="ls --almost-all --color=always"
-alias r="rmm"
-alias rb="home-manager switch --flake ~/.config/home-manager"
 
 #Default prompt
 # PROMPT='%F{blue}%~%f '

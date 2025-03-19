@@ -10,32 +10,5 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-# tinker with personal scripts
-personal_scripts(){
-  # target directory
-  # DIRE="$HOME/my_dotfiles/scripts/.local/bin/"
-  DIRE="$HOME/.local/bin/"
-
-  # list everything, print specific column, preview with bat
-  SCRIPTS=$(
-    find "${DIRE}" -type f |
-      # awk -F / '{print $6}' |
-      fzf \
-        --multi \
-        --keep-right \
-        --preview 'bat {1}'
-  )
-
-  # stop if no input
-  if [[ -n $SCRIPTS ]]; then
-			# open with helix
-			# hx "${DIRE}"/"${SCRIPTS}"
-			hx "${SCRIPTS}"
-  fi
-}
-
-# calling function
-# personal_scripts
-
-# using helix's telescope
+# using helix's file picker
 hx $HOME/.local/bin
