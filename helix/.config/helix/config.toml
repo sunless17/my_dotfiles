@@ -32,8 +32,8 @@ other-lines = "warning"
 display-progress-messages = true
 display-inlay-hints = true
 
-# [keys.normal]
-# C-o = ":open ~/.config/helix/config.toml" # Maps Ctrl-o to opening of the helix config file
+[keys.normal]
+space = { q = ":q!", w = ":wa" }
 
 [keys.insert]
-"C-[" = "normal_mode"
+j = { k = "normal_mode" }
