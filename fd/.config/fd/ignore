@@ -13,6 +13,7 @@
 .docker
 .ollama
 .nix*
+.grip
 auto-save-list
 eln-cache
 elpa
@@ -24,7 +25,13 @@ url
 .vscode
 
 .local
+.config
 .cache
+my_rustlings
+my_dotfiles
+past
+books
+insanity
 result
 node_modules
 stash

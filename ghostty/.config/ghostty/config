@@ -7,5 +7,5 @@ mouse-hide-while-typing = true
 window-padding-x = 5, 2
 window-padding-y = 5, 2
 gtk-tabs-location = hidden
-keybind = ctrl+left_bracket=text:\x1b
+# keybind = ctrl+left_bracket=text:\x1b
 scrollback-limit = 20000000
