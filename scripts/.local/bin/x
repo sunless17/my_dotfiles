@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-#===========================================#
-# title       : start cooking notes         #
-# author      : sunless47                   #
-# description : open notes folder faster    #
-#===========================================#
+#========================================#
+# title       : notes-taking             #
+# author      : sunless47                #
+# description : open notes folder faster #
+#========================================#
 
 # error handling (set -euo pipefail)
 set -o errexit
@@ -11,4 +11,4 @@ set -o nounset
 set -o pipefail
 
 # runs helix in the notes directory
-hx --working-dir $HOME/insanity/
+hx $HOME/insanity/

@@ -19,18 +19,23 @@ personal_scripts(){
   # list everything, print specific column, preview with bat
   SCRIPTS=$(
     find "${DIRE}" -type f |
-      awk -F / '{print $6}' |
+      # awk -F / '{print $6}' |
       fzf \
         --multi \
-        --keep-right 
+        --keep-right \
+        --preview 'bat {1}'
   )
 
   # stop if no input
   if [[ -n $SCRIPTS ]]; then
 			# open with helix
-			hx "${DIRE}"/"${SCRIPTS}"
+			# hx "${DIRE}"/"${SCRIPTS}"
+			hx "${SCRIPTS}"
   fi
 }
 
 # calling function
-personal_scripts
+# personal_scripts
+
+# using helix's telescope
+hx $HOME/.local/bin

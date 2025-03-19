@@ -1,5 +1,36 @@
+# default options
 .git
 .cache
 .github
 .gitattributes
 target
+
+# undesired config directories
+btop
+dconf
+discordcanary
+Electron
+git
+github-copilot
+glib-2.0
+gtk-3.0
+htop
+ibus
+npm-global
+pulse
+systemd
+zsh-plugs
+runtime
+bat
+bash
+emacs
+rofi
+mimeapps.list
+QtProject.conf
+
+# undesired rust project files
+Cargo.lock
+.gitignore
+assets
+my_rustlings
+my_dotfiles

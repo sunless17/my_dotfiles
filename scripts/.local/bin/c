@@ -13,7 +13,7 @@ set -o pipefail
 # list and select configs
 configs() {
 		# target directory
-		confs=( \
+		CONFS=( \
 				"$HOME/.config/hypr/" \
 				"$HOME/.config/emacs/configs/" \
 				"$HOME/.config/emacs/init.el" \
@@ -34,4 +34,7 @@ configs() {
 }
 
 # calling function
-configs
+# configs
+
+# opening with helix
+hx $HOME/.config/

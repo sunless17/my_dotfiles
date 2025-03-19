@@ -18,6 +18,7 @@ select = "underline"
 [editor.file-picker]
 hidden = false
 parents = false
+ignore = true
 
 [editor.soft-wrap]
 enable = true
