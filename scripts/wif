@@ -7,3 +7,4 @@
 
 # wifi
 sudo wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant/sunless.conf
+sudo dhcpcd wlan0

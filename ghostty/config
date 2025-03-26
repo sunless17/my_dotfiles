@@ -3,10 +3,10 @@ font-family = "Hack Nerd Font Mono Regular"
 font-size = 8
 confirm-close-surface = false
 background-opacity = 0.5
-cursor-style = underline
 mouse-hide-while-typing = true
 window-padding-x = 5, 2
 window-padding-y = 5, 2
 gtk-tabs-location = hidden
-# keybind = ctrl+left_bracket=text:\x1b
 command = /usr/bin/zsh
+shell-integration-features = no-cursor
+cursor-style = underline
