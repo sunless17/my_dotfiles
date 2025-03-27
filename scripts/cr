@@ -11,7 +11,7 @@ set -o nounset
 set -o pipefail
 
 # rust project
-PROJECT=structs_methods
+PROJECT=hello_world
 
 # opening with helix
 cargo run --package $PROJECT
